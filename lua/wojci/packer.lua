@@ -22,4 +22,47 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v1.x',
+  requires = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {'williamboman/mason.nvim'},           -- Optional
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},         -- Required
+    {'hrsh7th/cmp-nvim-lsp'},     -- Required
+    {'hrsh7th/cmp-buffer'},       -- Optional
+    {'hrsh7th/cmp-path'},         -- Optional
+    {'saadparwaiz1/cmp_luasnip'}, -- Optional
+    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+
+    -- Snippets
+    {'L3MON4D3/LuaSnip'},             -- Required
+    {'rafamadriz/friendly-snippets'}, -- Optional
+  }
+}
+use('norcalli/nvim-colorizer.lua')
+use('tc50cal/vim-terminal')
+use('terryma/vim-multiple-cursors') 
+use('ryanoasis/vim-devicons')
+use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup{
+    size = function(term)
+      -- print(vim.inspect(term))
+      if term.direction == "horizontal" then
+        return 20
+      elseif term.direction == "vertical" then
+        return vim.o.columns * 0.4
+      end
+    end,
+    open_mapping = [[\\]],
+    hide_numbers = true,
+    start_in_insert = true,
+    direction = 'horizontal'
+  }
+end}
+
 end)
