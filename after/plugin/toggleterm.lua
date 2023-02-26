@@ -1,13 +1,25 @@
 local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "echo \"hello\"", close_on_exit = false})
+local lazygit = Terminal:new({ cmd = "echo \"hello\"", hidden=true, close_on_exit = false})
 
-function _lazygit_toggle()
+function _get_command()
     local path = vim.api.nvim_buf_get_name(0)
-    lazygit.cmd = string.format("python %s", path)
+    local filetype = vim.bo.filetype
+    local c_tbl =
+    {
+        ["python"] = function() return string.format("python %s", vim.api.nvim_buf_get_name(0)) end
+    }
+    return c_tbl[filetype]()
 
-    lazygit:toggle()
 end
-vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>")
+function _run_file()
+    -- lazygit.cmd = string.format("python %s", path)
+    -- lazygit.cmd = "echo \"hello fucker\""
+    local command = _get_command()
+    vim.cmd("ToggleTerm")
+    vim.cmd(string.format("TermExec cmd=\"%s\"", command))
+    -- lazygit:toggle()
+end
+vim.keymap.set("n", "<leader>g", "<cmd>lua _run_file()<CR>")
 -- vim.api.nvim_set_keymap("n", "<C-`>", "<cmd>ToggleTerm<CR>", {"Terminal"})
 -- vim.keymap.set("n", "<C-`>", "<cmd>ToggleTerm<CR>")
 -- vim.keymap.set("n", "<C-`>", "<cmd>ToggleTerm<CR>")
