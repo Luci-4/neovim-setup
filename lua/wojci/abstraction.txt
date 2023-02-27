@@ -1,0 +1,32 @@
+leader (for general editor stuff)
+	f (find) 
+		f (files)
+		g (git)
+		c (commands)
+
+    t (toggle)
+        t (terminal)
+    l (list [verb])
+    g (goto)
+		d (definitions)
+        h (hover)
+		i (implementations)
+        r (references)
+        s (signature)
+
+    n (new)
+        f (files)
+        b (directory)
+    r (remove)
+        b (directory)
+    o (options)
+    s
+
+quick actions 
+
+c (code)
+    s (code action)
+    p (format)
+    o (complete)
+    r (rename word)
+    x (quick fix)

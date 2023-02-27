@@ -104,11 +104,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  farout = {
-    config = { "\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme farout\bcmd\bvim\0" },
+  fahrenheit = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme fahrenheit\bcmd\bvim\0" },
     loaded = true,
-    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\farout",
-    url = "https://github.com/fcpg/vim-farout"
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fahrenheit",
+    url = "https://github.com/fcpg/vim-fahrenheit"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -145,10 +145,20 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -171,7 +181,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3‘\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\4\17hide_numbers\2\20start_in_insert\2\17open_mapping\a\\\\\14direction\15horizontal\0\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3¤\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\5\20start_in_insert\2\17open_mapping\t<\\\\>\14direction\15horizontal\20insert_mappings\2\17hide_numbers\2\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -191,11 +201,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-multiple-cursors"] = {
-    loaded = true,
-    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-multiple-cursors",
-    url = "https://github.com/terryma/vim-multiple-cursors"
-  },
   ["vim-terminal"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-terminal",
@@ -204,14 +209,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fahrenheit
+time([[Config for fahrenheit]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme fahrenheit\bcmd\bvim\0", "config", "fahrenheit")
+time([[Config for fahrenheit]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3‘\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\4\17hide_numbers\2\20start_in_insert\2\17open_mapping\a\\\\\14direction\15horizontal\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+try_loadstring("\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3¤\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\5\20start_in_insert\2\17open_mapping\t<\\\\>\14direction\15horizontal\20insert_mappings\2\17hide_numbers\2\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: farout
-time([[Config for farout]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme farout\bcmd\bvim\0", "config", "farout")
-time([[Config for farout]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
