@@ -52,8 +52,6 @@ Search:
 - Diagnostics: `<space>d`
 
 
-Refer to the [Customization](#customization) section to personalize the configuration.
-
 ## Contributing
 
 Contributions are welcome! If you encounter issues or have suggestions, please open an issue or submit a pull request.
