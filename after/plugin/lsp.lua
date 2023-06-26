@@ -5,14 +5,13 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'rust_analyzer',
-    'pyre',
-    'pylsp',
+    -- 'pyre',
+    -- 'pylsp',
     'html',
     'jsonls',
     'clangd',
     'emmet_ls',
 })
-
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
     settings = {
@@ -31,10 +30,9 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<M-k>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<M-j>'] = cmp.mapping.select_next_item(cmp_select),
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete,
 })
 
-cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
@@ -50,15 +48,17 @@ lsp.set_preferences({
         info = 'I'
     }
 })
-
+function _gotto_definition_or_implementation()
+    vim.lsp.buf.definition()
+end
 local all_keybinds = {
     -- ['<leader>nd'] = vim.lsp.buf.add_workspace_folder,
     ['cs'] = "vim.lsp.buf.code_action",
     ['co'] = "vim.lsp.buf.completion",
     ['gd'] = "vim.lsp.buf.definition",
-    ['cp'] = "vim.lsp.buf.format",
+    ['='] = "vim.lsp.buf.format",
     ['gh'] = "vim.lsp.buf.hover",
-    ['gi'] = "vim.lsp.buf.implementations",
+--    ['gi'] = "vim.lsp.buf.implementation",
     ['<leader>lb'] = "vim.lsp.buf.list_workspace_folders",
     ['gr'] = "vim.lsp.buf.references",
     ['cr'] = "vim.lsp.buf.rename",
@@ -87,4 +87,23 @@ lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
+})
+
+lsp.ensure_installed('texlab') -- Install the texlab LSP server
+
+-- Configure the texlab LSP server
+lsp.configure('texlab', {
+    settings = {
+        texlab = {
+            build = {
+                executable = 'latexmk',
+                args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '%f' },
+                onSave = true
+            },
+            forwardSearch = {
+                executable = 'zathura', -- Replace with your PDF viewer command
+                args = { '--synctex-forward', '%l:1:%f', '%p' }
+            }
+        }
+    }
 })

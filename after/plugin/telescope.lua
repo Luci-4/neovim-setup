@@ -16,15 +16,15 @@ local actions = require("telescope.actions")
 -- vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 
 local leader_keybinds = {
-	['ff'] = builtin.find_files,
+	['f'] = builtin.find_files,
 	['fgf'] = builtin.git_files,
-	['f*'] = builtin.grep_string,
-	['fs'] = builtin.live_grep,
-	['fb'] = builtin.buffers,
-	['fc'] = builtin.commands,
-	['f'] = builtin.oldfiles,
-	['fch'] = builtin.command_history,
-	['o'] = builtin.vim_options,
+	-- ['*'] = function() builtin.grep_string({initial_mode="normal"}) end,
+	-- ['fs'] = builtin.live_grep,
+	['<Tab>'] = function() builtin.buffers({initial_mode = "normal"}) end,
+	['c'] = builtin.commands,
+	['fh'] = builtin.oldfiles, 
+	['ch'] = builtin.command_history,
+	['fo'] = builtin.vim_options,
 	['lm'] = builtin.marks,
 	-- ['lr'] = builtin.lsp_references,
 	-- ['lic'] = builtin.lsp_incoming_calls,
@@ -40,8 +40,10 @@ local bare_keybinds = {
 	['cxh'] = builtin.quickfixhistory,
 	['cs'] = builtin.spell_suggest,	
 }
+vim.keymap.set('n', '<leader>fs', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>*', function() builtin.grep_string({initial_mode="normal"}) end, {})
 
-for keys, cmd in pairs(leader_keybinds) do
+for keys, cmd in pairs(bare_keybinds) do
 	vim.keymap.set('n', keys, cmd, {})
 end
 
@@ -50,6 +52,7 @@ for keys, cmd in pairs(leader_keybinds) do
 end
 
 telescope.setup({
+    disable_defaults = true,
     defaults = {
 		mappings = {
 			i = {

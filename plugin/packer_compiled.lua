@@ -104,21 +104,55 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["cplex-nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cplex-nvim",
+    url = "https://github.com/Luci-4/cplex-nvim"
+  },
+  ["darkest-space"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\darkest-space",
+    url = "https://github.com/szorfein/darkest-space"
+  },
+  ["desert-night"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\desert-night",
+    url = "https://github.com/kooparse/vim-color-desert-night"
+  },
+  everforest = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   fahrenheit = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme fahrenheit\bcmd\bvim\0" },
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fahrenheit",
     url = "https://github.com/fcpg/vim-fahrenheit"
   },
-  ["friendly-snippets"] = {
+  firewatch = {
     loaded = true,
-    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\firewatch",
+    url = "https://github.com/erizocosmico/vim-firewatch"
+  },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
+  },
+  iroh = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\iroh",
+    url = "https://github.com/UnikMask/iroh-vim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -130,6 +164,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  noirblaze = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\noirblaze",
+    url = "https://github.com/n1ghtmare/noirblaze-vim"
+  },
+  noirbuddy = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\noirbuddy",
+    url = "https://github.com/jesseleite/nvim-noirbuddy"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
@@ -140,6 +184,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
@@ -148,7 +197,7 @@ _G.packer_plugins = {
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
+    url = "https://github.com/Luci-4/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -175,13 +224,43 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["pop-punk.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\pop-punk.vim",
+    url = "https://github.com/bignimbus/pop-punk.vim"
+  },
+  quantum = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\quantum",
+    url = "https://github.com/kjssad/quantum.vim"
+  },
+  sacredforest = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\sacredforest",
+    url = "https://github.com/karoliskoncevicius/sacredforest-vim"
+  },
+  shado = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\shado",
+    url = "https://github.com/Shadorain/shadotheme"
+  },
+  ["space-vim-theme"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\space-vim-theme",
+    url = "https://github.com/liuchengxu/space-vim-theme"
+  },
+  synthwave = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\synthwave",
+    url = "https://github.com/TroyFletcher/vim-colors-synthwave"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3¤\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\5\20start_in_insert\2\17open_mapping\t<\\\\>\14direction\15horizontal\20insert_mappings\2\17hide_numbers\2\0\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3’\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\4\14direction\15horizontal\17hide_numbers\2\20insert_mappings\2\20start_in_insert\2\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -201,22 +280,38 @@ _G.packer_plugins = {
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-purpura"] = {
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-purpura",
+    url = "https://github.com/yassinebridi/vim-purpura"
+  },
   ["vim-terminal"] = {
     loaded = true,
     path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-terminal",
     url = "https://github.com/tc50cal/vim-terminal"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\nê\1\0\0\5\0\18\0\0256\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\1K\0\1\0\fplugins\fpresets\1\0\0\1\0\0\23triggers_blacklist\6i\1\0\0\1\4\0\0\6<\6i\6k\vhidden\1\0\0\1\4\0\0\a^<\6<\a<*\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
+    loaded = true,
+    path = "C:\\Users\\wojci\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: fahrenheit
-time([[Config for fahrenheit]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme fahrenheit\bcmd\bvim\0", "config", "fahrenheit")
-time([[Config for fahrenheit]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3¤\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\5\20start_in_insert\2\17open_mapping\t<\\\\>\14direction\15horizontal\20insert_mappings\2\17hide_numbers\2\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+try_loadstring("\27LJ\2\ny\0\1\2\0\6\1\0159\1\0\0\a\1\1\0X\1\3€)\1\20\0L\1\2\0X\1\b€9\1\0\0\a\1\2\0X\1\5€6\1\3\0009\1\4\0019\1\5\1\24\1\0\1L\1\2\0K\0\1\0\fcolumns\6o\bvim\rvertical\15horizontal\14directionµæÌ™\19™³æþ\3’\1\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\tsize\1\0\4\14direction\15horizontal\17hide_numbers\2\20insert_mappings\2\20start_in_insert\2\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nê\1\0\0\5\0\18\0\0256\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\0025\3\v\0005\4\n\0=\4\f\3=\3\r\0025\3\15\0005\4\14\0=\4\16\3=\3\17\2B\0\2\1K\0\1\0\fplugins\fpresets\1\0\0\1\0\0\23triggers_blacklist\6i\1\0\0\1\4\0\0\6<\6i\6k\vhidden\1\0\0\1\4\0\0\a^<\6<\a<*\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

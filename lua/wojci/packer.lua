@@ -7,18 +7,63 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+  	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+  	  -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
   }
   use({
 	  'fcpg/vim-fahrenheit', 
 	  as = 'fahrenheit',
-	  config=function()
-		  vim.cmd('colorscheme fahrenheit')
-	  end
+--	  config=function()
+--		  vim.cmd('colorscheme fahrenheit')
+--	  end
+  })
+  use({
+        'n1ghtmare/noirblaze-vim',
+        as = 'noirblaze',
+  })
+  use({
+      'jesseleite/nvim-noirbuddy',
+        as ='noirbuddy'
   })
 
+  use({
+        'erizocosmico/vim-firewatch',
+        as = 'firewatch',
+  })
+  use({
+        'kooparse/vim-color-desert-night',
+        as = 'desert-night'
+  })
+  use({
+        'kjssad/quantum.vim',
+        as = 'quantum'
+  })
+  use({
+      'Shadorain/shadotheme',
+      as = "shado"
+  })
+  use({
+      'sainnhe/everforest',
+      as = 'everforest'
+  })
+  use({
+        'karoliskoncevicius/sacredforest-vim',
+        as = 'sacredforest'
+  })
+  use({
+      'UnikMask/iroh-vim',
+      as = 'iroh'
+  })
+  use({
+        "TroyFletcher/vim-colors-synthwave",
+        as = "synthwave"
+  })
+  use('szorfein/darkest-space')
+  use('liuchengxu/space-vim-theme')
+
+  use('bignimbus/pop-punk.vim')
+  use('yassinebridi/vim-purpura')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('mbbill/undotree')
@@ -42,7 +87,7 @@ return require('packer').startup(function(use)
 
     -- Snippets
     {'L3MON4D3/LuaSnip'},             -- Required
-    {'rafamadriz/friendly-snippets'}, -- Optional
+    -- {'rafamadriz/friendly-snippets'}, -- Optional
   }
 }
 use('norcalli/nvim-colorizer.lua')
@@ -58,7 +103,7 @@ use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         return vim.o.columns * 0.4
       end
     end,
-    open_mapping = [[<\\>]],
+    open_mapping = nil,
     hide_numbers = true,
     start_in_insert = true,
     insert_mappings = true,
@@ -66,10 +111,41 @@ use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   }
 end}
 use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  'Luci-4/nvim-tree.lua',
+    requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
 }
+use('airblade/vim-gitgutter')
+-- use('eandrju/cellular-automaton.nvim')
+use('terrortylor/nvim-comment')
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+        hidden = {"^<", "<", "<*"},
+        triggers_blacklist = {
+            i = { "<", "i", "k" },
+          },
+
+        plugins = {
+            presets = {
+                nav = nil
+            }
+        }
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+use('f-person/git-blame.nvim')
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+use('Luci-4/cplex-nvim')
+use('lervag/vimtex')
 end)
