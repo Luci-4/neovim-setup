@@ -13,18 +13,46 @@ function OplRun(configuration)
   _run_in_toggle_term('oplrun -v -p ' .. configuration)
 end
 
+
 vim.cmd('command! -nargs=? OplRun lua OplRun(<f-args>)')
 
+function GameRun()
+    _run_in_toggle_term('.\\build\\MaxwellsDemon.exe')
+end
+
+
+vim.cmd('command! -nargs=? GameRun lua GameRun()')
+
+function GameCompileRun()
+    _run_in_toggle_term('cmake --build .\\build')
+end
+
+
+vim.cmd('command! -nargs=? GameCompileRun lua GameCompileRun()')
+
+function GameCleanCompileRun()
+    _run_in_toggle_term('rd /s /q build & mkdir build && cmake . -G "MinGW Makefiles" & cmake --build .\\build')
+end
+
+vim.cmd('command! -nargs=? GameCleanCompileRun lua GameCleanCompileRun()')
 -- TODO: add a separate run function for displayed buffer 
+--
+
+
 function _get_command()
 
     print(vim.bo.filetype)
     local path = vim.api.nvim_buf_get_name(0)
+    -- print(path);
     local filetype = vim.bo.filetype
     local c_tbl =
     {
         ["python"] = function() return string.format("python %s", vim.api.nvim_buf_get_name(0)) end,
-        ["c"] = function() return string.format("gcc -save-temps %s -o program && program", vim.api.nvim_buf_get_name(0)) end
+        -- ["c"] = function() return string.format("gcc -save-temps %s -o program && program", vim.api.nvim_buf_get_name(0)) end,
+        ["c"] = function() return string.format("C:\\Users\\wojci\\compilePICC.bat %s", path) end,
+        ["prolog"] = function() return string.format("swipl %s", vim.api.nvim_buf_get_name(0)) end,
+        ["perl"] = function() return string.format("swipl %s", vim.api.nvim_buf_get_name(0)) end,
+        ["asm"] = function () return string.format("C:\\Users\\wojci\\runAssembly.bat %s", path) end
     }
     return c_tbl[filetype]()
 
@@ -39,6 +67,9 @@ function _run_in_term()
     -- lazygit:toggle()
 end
 vim.keymap.set("n", "<leader>9", "<cmd>OplRun<CR>")
+vim.keymap.set("n", "<leader>8", "<cmd>GameRun<CR>")
+vim.keymap.set("n", "<leader>7", "<cmd>GameCompileRun<CR>")
+vim.keymap.set("n", "<leader>6", "<cmd>GameCleanCompileRun<CR>")
 
 vim.keymap.set("n", "<leader><Enter>", "<cmd>lua _run_in_term()<CR>")
 function _G.set_terminal_keymaps()

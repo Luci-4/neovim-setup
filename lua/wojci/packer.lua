@@ -148,4 +148,5 @@ use {
 }
 use('Luci-4/cplex-nvim')
 use('lervag/vimtex')
+use('geg2102/nvim-python-repl')
 end)

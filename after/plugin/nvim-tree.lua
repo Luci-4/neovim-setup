@@ -76,6 +76,9 @@ require("nvim-tree").setup{
     disable_netrw = true,
     sort_by = "name",
     sync_root_with_cwd = true,
+    git = {
+        ignore = false
+    },
 --     Changes how files within the same directory are sorted.
 -- Can be one of `name`, `case_sensitive`, `modification_time`, `extension` or a
 -- function.
