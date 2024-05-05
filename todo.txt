@@ -1,0 +1,5 @@
+- Explorer keybinds and styling 
+- Terminal run shortcuts
+- Fuzzy finder (grep and files)
+- LSP support
+- Project/session abstraction 
