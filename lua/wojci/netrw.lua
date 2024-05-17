@@ -43,6 +43,7 @@ vim.cmd([[
     autocmd FileType netrw nmap <buffer> c <NOP>
     autocmd FileType netrw nmap <buffer> C <NOP>
     autocmd FileType netrw nmap <buffer> t <NOP>
+    autocmd FileType netrw nmap <buffer> o <NOP>
 
 ]])
 -- clear all binds
