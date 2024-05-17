@@ -35,3 +35,9 @@ vim.cmd[[
 -- vim.api.nvim_set_keymap("n", "l", "i", {})
 
 -- Remove file or directory
+vim.cmd([[
+    augroup filetypedetect
+        au BufRead,BufNewFile *.cpp setfiletype cpp
+        au BufRead,BufNewFile *.hpp setfiletype cpp
+    augroup END
+]])
