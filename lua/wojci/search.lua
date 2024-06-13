@@ -1,6 +1,10 @@
+function escapePattern(s)
+    return s:gsub("([%-%.%+%[%]%(%)%$%^%%%?%*])", "%%%1")
+end
+
 function removeFromString(originalString, substringToRemove)
-    substringToRemove = substringToRemove:gsub("[\\]", "\\\\")
-    local startIdx, endIdx = string.find(originalString, substringToRemove)
+    local escapedSubstring = escapePattern(substringToRemove)
+    local startIdx, endIdx = string.find(originalString, escapedSubstring)
     if startIdx then
         local modifiedString = string.sub(originalString, 1, startIdx - 1) .. string.sub(originalString, endIdx + 1)
         return modifiedString
@@ -58,7 +62,7 @@ end
 -- Function to display search results in a buffer
 function display_search_list()
     -- Function to create a new scratch buffer
-    print("displaying search list")
+    print(removeFromString("hello-thisyou", "hello-this"))
     local function create_scratch_buffer()
         -- Create a new scratch buffer
         local buf = vim.api.nvim_create_buf(false, true)
@@ -85,6 +89,7 @@ function display_search_list()
     function search_for_files(query)
         print("searching for files: " .. query)
         local root_dir = vim.fn.getcwd()
+        root_dir = root_dir:gsub("\\", "/")
         local result_paths = recursive_search(root_dir, query)
 
         -- Clear existing lines (except the first line)
@@ -92,9 +97,8 @@ function display_search_list()
 
         -- Append each path to the buffer (make them read-only)
         for _, path in ipairs(result_paths) do
-            print(root_dir)
-            print(path)
-            vim.api.nvim_buf_set_lines(buf, -1, -1, false, {removeFromString(path, root_dir)})
+            strippedPath = removeFromString(path, root_dir)
+            vim.api.nvim_buf_set_lines(buf, -1, -1, false, {strippedPath})
             -- vim.api.nvim_buf_add_highlight(buf, -1, 'Comment', -1, 0, -1)
         end
 
@@ -105,3 +109,6 @@ function display_search_list()
     -- Define a mapping for <CR> (Enter) in the first line of the buffer
     vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', ':lua search_for_files(vim.fn.getline(1))<CR>', {noremap = true, silent = true})
 end
+
+
+
