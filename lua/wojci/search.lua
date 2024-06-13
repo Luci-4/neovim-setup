@@ -46,7 +46,9 @@ local function recursive_search(root_dir, query)
                 end
             elseif file_type == 'file' then
                 if stringContains(file_path, query) then
-                    table.insert(file_paths, file_path)
+
+                    strippedPath = removeFromString(file_path, root_dir)
+                    table.insert(file_paths, strippedPath)
                 end
             
             end
@@ -59,10 +61,16 @@ local function recursive_search(root_dir, query)
     return file_paths
 end
 
+function search_for_files(query)
+    local root_dir = vim.fn.getcwd()
+    root_dir = root_dir:gsub("\\", "/")
+    local result_paths = recursive_search(root_dir, query)
+    return result_paths
+end
+    
 -- Function to display search results in a buffer
-function display_search_list()
+function display_search_list(callback)
     -- Function to create a new scratch buffer
-    print(removeFromString("hello-thisyou", "hello-this"))
     local function create_scratch_buffer()
         -- Create a new scratch buffer
         local buf = vim.api.nvim_create_buf(false, true)
@@ -86,19 +94,14 @@ function display_search_list()
     vim.cmd('autocmd BufEnter <buffer> setlocal cursorline')
 
     -- Function to handle user input and trigger search
-    function search_for_files(query)
-        print("searching for files: " .. query)
-        local root_dir = vim.fn.getcwd()
-        root_dir = root_dir:gsub("\\", "/")
-        local result_paths = recursive_search(root_dir, query)
-
+    function display_list()
+        list = callback(vim.fn.getline(1))
         -- Clear existing lines (except the first line)
         vim.api.nvim_buf_set_lines(buf, 1, -1, false, {})
 
         -- Append each path to the buffer (make them read-only)
-        for _, path in ipairs(result_paths) do
-            strippedPath = removeFromString(path, root_dir)
-            vim.api.nvim_buf_set_lines(buf, -1, -1, false, {strippedPath})
+        for _, element in ipairs(list) do
+            vim.api.nvim_buf_set_lines(buf, -1, -1, false, {element})
             -- vim.api.nvim_buf_add_highlight(buf, -1, 'Comment', -1, 0, -1)
         end
 
@@ -106,8 +109,7 @@ function display_search_list()
         vim.api.nvim_buf_set_option(buf, 'modifiable', false)
     end
 
-    -- Define a mapping for <CR> (Enter) in the first line of the buffer
-    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', ':lua search_for_files(vim.fn.getline(1))<CR>', {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', ':lua display_list()<CR>', {noremap = true, silent = true})
 end
 
 
