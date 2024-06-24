@@ -1,0 +1,20 @@
+how to:
+
+install new colors
+2. download the repo
+3. find [themename].lua
+4. put it into nvim/colors/
+
+install new syntax highlight
+1. search on github for highlight
+2. find file name [language_name].vim
+3. put it into nvim/syntax/
+4. put 
+
+    vim.cmd([[
+        augroup filetypedetect
+            au BufRead,BufNewFile *.[fileextension1] setfiletype [language_name]
+            au BufRead,BufNewFile *.[fileextension2] setfiletype [language_name]
+        augroup END
+    ]])
+    into init.lua

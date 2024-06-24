@@ -1,6 +1,14 @@
 require("wojci.set")
 require("wojci.remap")
 require("wojci.netrw")
+require("wojci.lsp")
+require("wojci.search")
+
+vim.opt.path:append('**')
+vim.o.wildmenu = true
+
+vim.o.wildmode = "list:full"
+
 
 -- vim.cmd("set fillchars=stl:")
 
@@ -52,6 +60,14 @@ function openPopup()
         "3. Item 3"
     }
 
+    -- Calculate the position for the popup window
+    local win_width = vim.api.nvim_win_get_width(0)
+    local win_height = vim.api.nvim_win_get_height(0)
+    local popup_width = 40
+    local popup_height = #popup_content + 2
+    local row = math.floor((win_height - popup_height) / 2)
+    local col = math.floor((win_width - popup_width) / 2)
+
     -- Open a new buffer for the popup content
     local popup_buffer = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_lines(popup_buffer, 0, -1, false, popup_content)
@@ -60,11 +76,11 @@ function openPopup()
     local popup_options = {
         style = "minimal",
         relative = "editor",
-        width = 40,
-        height = #popup_content + 2,
-        row = 1,
-        col = 1,
-        focusable = false,  -- Prevent focusing other buffers
+        width = popup_width,
+        height = popup_height,
+        row = row,
+        col = col,
+        focusable = true,  -- Prevent focusing other buffers
         border = "single"
     }
 

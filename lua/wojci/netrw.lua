@@ -47,3 +47,5 @@ vim.cmd([[
 
 ]])
 -- clear all binds
+
+vim.api.nvim_set_keymap('n', 'o', 'o', { noremap = true, silent = true })
