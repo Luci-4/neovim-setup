@@ -123,12 +123,30 @@ function display_search_list(callback)
     vim.api.nvim_buf_set_keymap(buf, 'i', '<M-j>', '<Cmd>lua move_highlight(' .. buf .. ', 1)<CR>', { noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(buf, 'i', '<M-k>', '<Cmd>lua move_highlight(' .. buf .. ', -1)<CR>', { noremap = true, silent = true })
 
+    vim.api.nvim_buf_set_keymap(buf, 'n', '<M-j>', '<Cmd>lua move_highlight(' .. buf .. ', 1)<CR>', { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(buf, 'n', '<M-k>', '<Cmd>lua move_highlight(' .. buf .. ', -1)<CR>', { noremap = true, silent = true })
+    
+    -- Move highlight to the first item after inserting a character in the first line
     vim.api.nvim_create_autocmd('TextChangedI', {
         group = 'SpecialBufferKeyPress',
         buffer = buf,
         callback = function()
             current_line = 2
             highlight_current_line(buf, current_line - 1)
+        end,
+    })
+
+    -- Prevent cursor from leaving the first line in normal mode
+    vim.api.nvim_create_autocmd('CursorMoved', {
+        group = 'SpecialBufferKeyPress',
+        buffer = buf,
+        callback = function()
+            if vim.api.nvim_get_mode().mode == 'n' then
+                local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+                if row > 1 then
+                    vim.api.nvim_win_set_cursor(0, {1, 0})
+                end
+            end
         end,
     })
 end
