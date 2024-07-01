@@ -18,3 +18,23 @@ install new syntax highlight
         augroup END
     ]])
     into init.lua
+
+install new tree-sitter parser
+1. make sure you have tree-sitter cli installed:
+    npm install -g tree-sitter-cli
+2. clone the repo while being in /parser/ directory
+    for example git clone https://github.com/tree-sitter/tree-sitter-c
+
+3. inside the cloned directory run 
+    tree-sitter generate
+    tree-sitter build
+    * sometimes you just need to build
+
+4.make sure its there somewhere
+
+    require'nvim-treesitter.configs'.setup {
+        highlight = {
+            enable = true, -- false will disable the whole extension
+            additional_vim_regex_highlighting = false,
+        },
+    }
