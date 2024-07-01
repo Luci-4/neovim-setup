@@ -3,6 +3,7 @@ require("wojci.remap")
 require("wojci.netrw")
 require("wojci.lsp")
 require("wojci.search")
+require("wojci.term")
 
 vim.opt.path:append('**')
 vim.o.wildmenu = true
