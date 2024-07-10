@@ -2,7 +2,7 @@ require("wojci.set")
 require("wojci.remap")
 require("wojci.netrw")
 require("wojci.lsp")
-require("wojci.search")
+require("wojci.spectroscope.spectroscope")
 require("wojci.term")
 
 vim.opt.path:append('**')
