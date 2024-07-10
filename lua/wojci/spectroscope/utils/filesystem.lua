@@ -57,3 +57,5 @@ function filesystem_recursive_search(root_dir, query)
 
     return file_paths
 end
+
+filesystem_preload_cache(vim.fn.getcwd():gsub("\\", "/"))

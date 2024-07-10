@@ -22,6 +22,54 @@ function move_highlight(buf, direction)
     highlight_current_line(buf, current_line - 1)
 end
 
+function display_search_buffer(callback)
+    local function create_scratch_buffer()
+        local buf = vim.api.nvim_create_buf(false, true)
+        vim.api.nvim_buf_set_option(buf, 'buftype', 'nofile')
+        vim.api.nvim_buf_set_option(buf, 'bufhidden', 'wipe')
+        vim.api.nvim_buf_set_option(buf, 'modifiable', true)
+        vim.cmd('vsplit')
+        vim.api.nvim_win_set_buf(0, buf)
+        return buf
+    end
+
+    local buf = create_scratch_buffer()
+    vim.cmd('autocmd BufEnter <buffer> setlocal cursorline')
+
+    local function display_list()
+        local list = callback(vim.fn.getline(1))
+        vim.api.nvim_buf_set_lines(buf, 1, -1, false, {})
+        for _, element in ipairs(list) do
+            vim.api.nvim_buf_set_lines(buf, -1, -1, false, {element})
+        end
+    end
+
+    vim.api.nvim_create_augroup('SpecialBufferKeyPress', { clear = true })
+    vim.api.nvim_create_autocmd('CursorMovedI', {
+        group = 'SpecialBufferKeyPress',
+        buffer = buf,
+        callback = function()
+            display_list()
+        end,
+    })
+
+    -- Restrict modes to normal when the cursor is not on the first line
+    vim.api.nvim_create_autocmd('CursorMoved', {
+        group = 'SpecialBufferKeyPress',
+        buffer = buf,
+        callback = function()
+            local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+            if row ~= 1 then
+                vim.cmd('stopinsert')
+                vim.api.nvim_input('<Esc>')
+                vim.api.nvim_buf_set_option(buf, 'modifiable', false)
+            else
+                vim.api.nvim_buf_set_option(buf, 'modifiable', true)
+            end
+        end,
+    })
+end
+
 function display_search_list(callback)
     local function create_scratch_buffer()
         local buf = vim.api.nvim_create_buf(false, true)

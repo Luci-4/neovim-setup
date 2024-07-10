@@ -9,4 +9,3 @@ end
 
 
 
-filesystem_preload_cache(vim.fn.getcwd():gsub("\\", "/"))
